@@ -30,3 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+  // FONCTION MENU (pour le callback)
+  function initMenu() {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav");
+
+  if (!toggle || !nav) {
+    console.warn("Menu introuvable");
+    return;
+  }
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+}
