@@ -1,3 +1,14 @@
+:root {
+  --primary: #1e3a5f; /* Bleu principal */
+  --secondary: #2a7f9e; /* Bleu doux */
+  --accent: #f2c94c; /* Jaune (CTA uniquement) */
+
+  --bg: #f5f7f6;
+  --white: #ffffff;
+
+  --text: #2c2c2c;
+}
+
 /* ==========================================================================
    1. RESET & BASE
    ========================================================================== */
@@ -63,7 +74,7 @@ body {
 /* LOGO */
 .logo span {
   font-weight: bold;
-  color: #2a7f62;
+  color: var(--secondary);
 }
 
 /* NAV */
@@ -76,7 +87,7 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: #333;
+  color: var(--primary);
   font-weight: 500;
   position: relative;
 }
@@ -89,7 +100,7 @@ body {
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background: #2a7f62;
+  background: var(--secondary);
   transition: width 0.3s ease;
 }
 
@@ -144,7 +155,7 @@ body {
 .hero-content h1 {
   letter-spacing: 0.5px;
   font-size: 2.2rem;
-  color: #2a7f62;
+  color: var(--primary);
 }
 
 /* ACTIONS */
@@ -173,12 +184,12 @@ body {
 /* TELEPHONE */
 .phone {
   background: transparent;
-  color: #2a7f62;
-  border: 2px solid #2a7f62;
+  color: var(--primary);
+  border: 2px solid var(--primary);
 }
 
 .phone:hover {
-  background: linear-gradient(135deg, #2a7f62, #3fa981);
+  background: var(--primary);
   color: white;
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
@@ -186,12 +197,13 @@ body {
 
 /* DOCTOLIB */
 .btn {
-  background: linear-gradient(135deg, #2a7f62, #3fa981);
-  color: white;
+  background: #00a8e0;
+  color: #000;
   border: none;
 }
 
 .btn:hover {
+  background: var(--primary);
   color: white;
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
@@ -234,7 +246,7 @@ body {
    6. FOOTER MODERNE
    ========================================================================== */
 .footer {
-  background: #2a7f62;
+  background: var(--primary);
   color: #fff;
   padding: 40px 0 20px;
   margin-top: 50px;
@@ -287,7 +299,7 @@ body {
 /* ==========================================================================
    7. RESPONSIVE
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .menu-toggle {
     display: block;
   }
@@ -371,7 +383,7 @@ body {
 
 /* couleurs */
 .cta-phone {
-  background: #2a7f62;
+  background: var(--primary);
 }
 
 .cta-doctolib {
@@ -409,8 +421,8 @@ body {
 }
 
 .banner-dev {
-  background: #f4c542;
-  color: #333;
+  background: var(--accent);
+  color: #000;
   text-align: center;
   padding: 6px;
   font-size: 0.9rem;
@@ -423,7 +435,7 @@ body {
 h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #2a7f62;
+  color: var(--primary);
   letter-spacing: 0.5px;
 }
 
