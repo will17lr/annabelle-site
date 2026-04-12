@@ -112,10 +112,11 @@ body {
   min-height: calc(100vh - 80px);
   background:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../assets/images/cabinet.jpg") center/cover no-repeat;
+    url("../assets/images/cabinet1.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -30px;
 }
 
 .hero::after {
@@ -166,7 +167,7 @@ body {
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  min-width: 180px;
+  min-width: 190px;
 }
 
 /* TELEPHONE */
@@ -408,14 +409,14 @@ body {
 }
 
 .banner-dev {
+  background: #f4c542;
+  color: #333;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.9rem;
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffcc00;
-  color: #333;
-  text-align: center;
-  padding: 8px;
-  font-size: 0.9rem;
   z-index: 2000;
 }
 
