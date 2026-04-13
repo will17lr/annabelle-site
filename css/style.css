@@ -253,9 +253,17 @@ h2 {
 
 .gallery img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4/3;
   object-fit: cover;
-  border-radius: 20%;
+  border-radius: 18px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* TESTIMONIALS */
@@ -715,7 +723,7 @@ h2 {
 /* ==========================================================================
    10. RESPONSIVE
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
@@ -742,6 +750,12 @@ h2 {
   .footer-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 10;
+  }
+
+  .gallery img {
+    aspect-ratio: 4/3;
+    height: auto;
   }
 
   .testimonial-text {
@@ -890,5 +904,29 @@ h2 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ========================================================================== 
+   FIX GALERIE MOBILE UX
+   ========================================================================== */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 20px 0;
+  }
+
+  .gallery img {
+    aspect-ratio: 4/3;
+    border-radius: 14px;
+  }
+
+  /* Indice visuel subtil */
+  .gallery::after {
+    content: "↓";
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 10px;
   }
 }
