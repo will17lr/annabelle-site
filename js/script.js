@@ -7,11 +7,20 @@ function initMenu() {
     return;
   }
 
-  // évite double binding
   toggle.onclick = null;
 
-  toggle.onclick = () => {
+  toggle.onclick = (e) => {
+    e.stopPropagation();
     nav.classList.toggle("active");
-    toggle.classList.toggle("active"); // utile pour animation burger
+    toggle.classList.toggle("active");
+  };
+
+  nav.onclick = (e) => {
+    e.stopPropagation();
+  };
+
+  document.onclick = () => {
+    nav.classList.remove("active");
+    toggle.classList.remove("active");
   };
 }
