@@ -557,8 +557,9 @@ li {
 }
 
 /* ==========================================================================
-   7. CTA MOBILE
+   7. CTA MOBILE – VERSION DYNAMIQUE
    ========================================================================== */
+
 .cta-mobile {
   position: fixed;
   bottom: 15px;
@@ -572,48 +573,157 @@ li {
 
 .cta-btn {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  color: #fff;
+  justify-content: flex-start;
+
+  width: 56px;
+  height: 56px;
+  padding: 0 16px;
+
+  border-radius: 999px;
   text-decoration: none;
-  font-size: 22px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
+  color: #fff;
 
-.cta-btn small {
-  font-size: 10px;
-  margin-top: 2px;
-  opacity: 0.9;
-}
+  overflow: hidden;
+  white-space: nowrap;
 
-.cta-phone {
-  background: #107aca;
-}
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 
-.cta-doctolib {
-  background: var(--doctolib);
-  animation: pulse 2s infinite;
+  transition:
+    width 0.35s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .cta-btn:hover {
-  transform: scale(1.1);
+  transform: translateY(-2px);
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 168, 224, 0.6);
+.cta-icon {
+  font-size: 1.1rem;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  tranform: translateY(1px);
+}
+
+.cta-label {
+  opacity: 0;
+  max-width: 0;
+  margin-left: 0;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.95);
+
+  transition:
+    opacity 0.25s ease,
+    max-width 0.35s ease,
+    margin-left 0.25s ease;
+}
+.cta-btn.expanded {
+  width: 170px;
+  justify-content: center;
+}
+
+.cta-btn.expanded .cta-label {
+  opacity: 1;
+  max-width: 110px;
+  margin-left: 10px;
+}
+
+.cta-phone {
+  background: linear-gradient(135deg, var(--primary), #0d66aa);
+  gap: 8px;
+}
+
+.cta-doctolib {
+  background: linear-gradient(135deg, var(--doctolib), var(--doctolib-hover));
+}
+
+@media (max-width: 768px) {
+  .cta-btn {
+    width: 52px;
+    height: 52px;
   }
-  70% {
-    box-shadow: 0 0 0 12px rgba(0, 168, 224, 0);
+
+  .cta-btn.expanded {
+    width: 160px;
   }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 168, 224, 0);
+
+  .cta-label {
+    font-size: 0.78rem;
   }
+}
+
+@media (min-width: 931px) {
+  .cta-mobile {
+    display: none;
+  }
+}
+
+/* ==========================
+   CTA DOCTOLIB – LOGO D / WORDMARK
+   ========================== */
+
+.cta-doctolib {
+  justify-content: center;
+  position: relative;
+}
+
+/* état compact : on montre le D */
+.cta-icon--compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* état compact : le mot Doctolib est caché */
+.cta-icon-wordmark {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* tailles des images */
+.cta-icon-img--d {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.cta-icon-img--wordmark {
+  height: 18px;
+  width: auto;
+  display: block;
+}
+
+/* état déplié */
+.cta-doctolib.expanded {
+  justify-content: center;
+}
+
+/* quand le bouton est ouvert :
+   on cache le D
+   on affiche Doctolib */
+.cta-doctolib.expanded .cta-icon--compact {
+  display: none;
+}
+
+.cta-doctolib.expanded .cta-icon-wordmark {
+  display: flex;
+}
+
+/* on neutralise l'ancien label texte sur ce bouton */
+.cta-doctolib .cta-label {
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -1181,6 +1291,10 @@ body {
 @media (max-width: 930px) {
   .btn-doctolib {
     display: none !important;
+  }
+
+  .hero .btn-doctolib-hero {
+    display: inline-flex !important;
   }
 }
 
