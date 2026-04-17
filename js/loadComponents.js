@@ -31,4 +31,6 @@ loadComponent("header", basePath + "components/header.html", () => {
   initMenu();
 });
 
-loadComponent("footer", basePath + "components/footer.html");
+loadComponent("footer", basePath + "components/footer.html", () => {
+  initFloatingCta();
+});
