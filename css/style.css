@@ -1031,6 +1031,27 @@ img {
   border-radius: 12px;
 }
 
+.map-container {
+  width: 100%;
+  max-width: 500px;
+
+  border-radius: 12px;
+  overflow: hidden; /* corrige le problème des bords */
+
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* contour léger */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  margin-top: 20px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  display: block; /* supprime les décalages invisibles */
+}
+
 .about-text {
   width: 100%;
 }
@@ -1113,18 +1134,23 @@ body {
 @media (max-width: 930px) {
   .menu-toggle {
     display: flex;
-    width: 30px;
-    height: 22px;
+    width: 36px;
+    height: 26px;
+    padding: 4px;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     position: relative;
     z-index: 10002;
+    flex-shrink: 0;
+    overflow: visible;
   }
 
   .menu-toggle span {
-    height: 3px;
+    display: block;
     width: 100%;
+    height: 3px;
     background: var(--primary);
     border-radius: 2px;
     transition: 0.3s ease;
