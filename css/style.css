@@ -52,23 +52,23 @@ h2 {
 }
 
 .card {
-  padding: 30px;
   background: #ffffff;
+  padding: 20px;
   border-radius: 12px;
-  border: none;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  max-width: 100%;
-  overflow: hidden;
 }
 
 /* Texte long */
 p,
 li {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  font-weight: 500;
+  margin: 0;
 }
 
 .card:hover {
@@ -937,7 +937,7 @@ li {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 931px) {
   .cta-mobile {
     display: none;
   }
@@ -985,9 +985,9 @@ li {
     width: 92%;
   }
 
-  .card {
+  /* .card {
     padding: 20px;
-  }
+  } */
 }
 
 /* Très petit écran */
@@ -996,9 +996,9 @@ li {
     width: 94%;
   }
 
-  .card {
+  /* .card {
     padding: 15px;
-  }
+  } */
 }
 
 /* TEMPO : pour debug uniquement, à supprimer après */
@@ -1115,6 +1115,14 @@ body {
   margin: 0 auto 30px;
 }
 
+/* Le conteneur qui force l'alignement côte à côte */
+.acces-container {
+  display: flex;
+  gap: 20px; /* Espace entre les deux blocs */
+  justify-content: center; /* Centre les images horizontalement */
+  flex-wrap: wrap; /* Permet de revenir à la ligne sur petit écran (mobile) */
+}
+
 .acces-entry {
   text-align: center;
 }
@@ -1168,4 +1176,169 @@ body {
 
 .menu-toggle.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 930px) {
+  .btn-doctolib {
+    display: none !important;
+  }
+}
+
+.btn-doctolib {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #00a8e0;
+  color: #fff;
+  text-decoration: none;
+
+  padding: 14px 24px;
+  border-radius: 6px;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0, 168, 224, 0.25);
+
+  transition: all 0.25s ease;
+}
+
+/* effet bouton */
+.btn-doctolib:hover {
+  background: #0094c7;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 168, 224, 0.35);
+}
+
+.btn-doctolib:active {
+  transform: scale(0.98);
+}
+
+/* HERO CONSULTATION */
+.hero-consultation {
+  position: relative;
+  height: 60vh;
+}
+
+.hero-consultation img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+/* FLEX */
+.section-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.section-flex img {
+  max-width: 450px;
+  border-radius: 12px;
+}
+
+.section-flex.reverse {
+  flex-direction: row-reverse;
+}
+
+/* CARD */
+.section-card {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.section-card p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+/* GRID */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  max-width: 600px;
+  margin: auto;
+}
+
+/* .card {
+  text-align: center;
+} */
+
+.card img {
+  width: 100%;
+  max-width: 180px;
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section-flex {
+    flex-direction: column;
+  }
+
+  .section-flex.reverse {
+    flex-direction: column;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HORAIRES */
+.horaires-section {
+  margin: 60px 0;
+}
+
+.horaires-card {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.horaires-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.horaires-list {
+  list-style: none;
+  padding: 0;
+}
+
+.horaires-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.horaires-list li span:first-child {
+  font-weight: 600;
 }
