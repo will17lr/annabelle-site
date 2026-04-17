@@ -7,21 +7,45 @@ function initMenu() {
     return;
   }
 
+let menuTimeout;
+
+function openMenu() {
+  nav.classList.add("active");
+  toggle.classList.add("active");
+  clearTimeout(menuTimeout);
+
+  // fermeture automatique après 5s d'inactivité
+  menuTimeout = setTimeout(() => {
+    closeMenu();
+  }, 5000);
+}
+
+function closeMenu() {
+  nav.classList.remove("active");
+  toggle.classList.remove("active");
+  clearTimeout(menuTimeout);
+}
+
   toggle.onclick = null;
 
   toggle.onclick = (e) => {
     e.stopPropagation();
-    nav.classList.toggle("active");
-    toggle.classList.toggle("active");
+
+    if (nav.classList.contains("active")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   };
 
+  // clic sur nav = reste ouvert
   nav.onclick = (e) => {
     e.stopPropagation();
+    clearTimeout(menuTimeout); // reset timer
   };
 
   document.onclick = () => {
-    nav.classList.remove("active");
-    toggle.classList.remove("active");
+    closeMenu();
   };
 }
 
