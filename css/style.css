@@ -60,6 +60,15 @@ h2 {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Texte long */
+p,
+li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .card:hover {
@@ -77,13 +86,15 @@ h2 {
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #eee;
   z-index: 1000;
+  overflow: visible;
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
+  padding: 15px 10px;
+  max-width: 100%;
 }
 
 /* LOGO */
@@ -139,7 +150,7 @@ h2 {
   min-height: calc(100vh - 80px);
   background:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../assets/images/cabinet1.jpg") center/cover no-repeat;
+    url("../assets/images/hero-cabinet1.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -723,34 +734,71 @@ h2 {
 /* ==========================================================================
    10. RESPONSIVE
    ========================================================================== */
-@media (max-width: 768px) {
+
+/* ===== NAV DESKTOP (> 931px) ===== */
+@media (min-width: 931px) {
+  .nav {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* ===== NAV MOBILE (<= 930px) ===== */
+@media (max-width: 930px) {
   .menu-toggle {
     display: block;
+    position: relative;
+    z-index: 10002;
   }
 
   .nav {
     position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
+    top: 100%;
+    left: 10px;
+    right: 10px;
+
     background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+
+    display: flex;
     flex-direction: column;
-    display: none;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+
+    padding-bottom: 10px;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
 
   .nav.active {
-    display: flex;
-    animation: slideDown 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
+  .nav a {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+}
+@media (max-width: 930px) {
   .services-grid,
   .testimonials-grid,
   .footer-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 10;
+    gap: 10px;
   }
 
   .gallery img {
@@ -929,4 +977,135 @@ h2 {
     color: #aaa;
     margin-top: 10px;
   }
+}
+
+/* Mobile */
+@media (max-width: 930px) {
+  .container {
+    width: 92%;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Très petit écran */
+@media (max-width: 480px) {
+  .container {
+    width: 94%;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+
+/* TEMPO : pour debug uniquement, à supprimer après */
+/* * {
+  outline: 1px solid red;
+} */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.about-text {
+  width: 100%;
+}
+
+.hero-about {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  background: url("../assets/images/cabinet1.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-about .overlay {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.hero-about,
+.overlay {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* =========================
+   ACCÈS
+========================= */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+.acces {
+  padding: 60px 0;
+}
+
+.acces-hero img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.acces-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.acces-entry {
+  text-align: center;
+}
+
+.acces-entry img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+}
+
+.acces-entry .caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
 }
