@@ -6,8 +6,11 @@
 
   <title>Contact Chiropracteur La Rochelle - Annabelle Néraudeau</title>
 
-  <meta name="description"
-    content="Contactez Annabelle Néraudeau, chiropracteur à La Rochelle. Prenez rendez-vous facilement.">
+  <!-- Config SEO -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Description SEO -->
+   <meta name="description" content="Contactez Annabelle Néraudeau, chiropracteur à La Rochelle. Prenez rendez-vous facilement.">
 
   <meta name="author" content="Annabelle Néraudeau">
   <link rel="icon" href="../assets/images/favicon.ico">
@@ -32,18 +35,19 @@
   <div id="header"></div>
 
 <!-- HERO -->
-<section class="hero-about">
-  <div class="overlay">
+<section class="hero">
+  <div class="container hero-content">
     <h1>Accès et contact</h1>
     <p>Me trouver et me contacter facilement</p>
 
-    <br>
-    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau" class="btn-doctolib" target="_blank"
-      rel="noopener noreferrer">
-      Rendez-vous sur Doctolib
-    </a>
-  </div>
-</section>
+    <!-- ✅ bouton ajouté -->
+    <div class="hero-actions">
+      <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau" class="btn-doctolib btn-doctolib-hero"
+        target="_blank" rel="noopener noreferrer">
+        Rendez-vous sur Doctolib
+      </a>
+    </div>
+    </section>
 
 <!-- ACCÈS -->
 <section class="acces">
@@ -85,12 +89,12 @@
             </div>
 
       <!-- IMAGE ENTRÉE Plaque -->
-      <div class="acces-entry">
+      <!-- <div class="acces-entry">
         <img src="../assets/images/acces-cabinet2.jpg" alt="Entrée du cabinet chiropratique">
         <p class="caption">
           Entrée au numéro 7 – porte blanche avec plaque chiropratique.
         </p>
-      </div>
+      </div> -->
 
     </div>
 
@@ -98,30 +102,48 @@
 </section>
 
 <!-- CONTACT -->
-<section class="about">
-  <div class="container about-grid">
+<section class="contact">
+  <div class="container">
+
+    <h2 class="section-title">Cabinet chiropratique</h2>
+
+    <div class="contact-grid">
 
     <!-- INFOS -->
-    <div class="about-text">
+    <div class="contact-card">
 
-      <h2>Cabinet chiropratique</h2>
+      <div class="contact-item">
+        <span class="icon">📍</span>
+        <div>
+          <strong>Adresse</strong>
+          <p>7 Square Annette Epaud<br>17000 La Rochelle</p>
+        </div>
+      </div>
 
-      <p><strong>Adresse :</strong><br>
-      7 Square Annette Epaud<br>
-      17000 La Rochelle</p>
+      <div class="contact-item">
+        <span class="icon">📞</span>
+        <div>
+          <strong>Téléphone</strong>
+          <p>
+            <a href="tel:+33661813005">06 61 81 30 05</a>
+          </p>
+        </div>
+      </div>
 
-      <p><strong>Téléphone :</strong><br>
-      <a href="tel:+33661813005" class="phone1">
-          📞 06 61 81 30 05
-        </a></p>
-
-      <p><strong>Email :</strong><br>
-      <a href="mailto:a.neraudeau@outlook.fr">a.neraudeau@outlook.fr</a></p>
+      <div class="contact-item">
+        <span class="icon">✉️</span>
+        <div>
+          <strong>Email</strong>
+          <p>
+            <a href="mailto:a.neraudeau@outlook.fr">a.neraudeau@outlook.fr</a>
+          </p>
+        </div>
+      </div>
 
     </div>
 
     <!-- CARTE -->
-    <div class="map-container">
+    <div class="map-card">
 
       <iframe
         src="https://www.google.com/maps?q=7+Square+Annette+Epaud+La+Rochelle&output=embed"
@@ -137,13 +159,21 @@
   </div>
 </section>
 
-<!-- CTA BAS -->
+<!-- CTA -->
 <section class="cta">
   <div class="container">
 
-    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau/booking/patient-identity?source=profile" class="btn-doctolib" target="_blank"
-      rel="noopener noreferrer">
-      Rendez-vous sur Doctolib
+    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau/booking?source=profile"
+      target="_blank" rel="noopener noreferrer" class="cta-btn cta-doctolib" aria-label="Prendre rendez-vous">
+
+      <span class="cta-icon cta-icon--compact">
+        <img src="../assets/images/D_White.svg" alt="" class="cta-icon-img cta-icon-img--d">
+      </span>
+
+      <span class="cta-icon-wordmark">
+        <img src="../assets/images/Doctolib_White.svg" alt="Doctolib" class="cta-icon-img cta-icon-img--wordmark">
+      </span>
+
     </a>
   </div>
 </section>
