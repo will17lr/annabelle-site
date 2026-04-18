@@ -6,6 +6,10 @@
 
   <title>Taifs chiroprateur - La Rochelle</title>
 
+    <!-- Config SEO -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Description SEO -->
   <meta name="description"
     content="Découvrez les consultations proposées par votre chiropracteur à La Rochelle : douleurs dorsales, cervicales, stress et posture.">
 
@@ -32,18 +36,20 @@
   <div id="header"></div>
 
 <!-- HERO -->
-<section class="hero-consultation">
-  <img src="../assets/images/consultation-chiropracteur.jpg" alt="Manipulation chiropratique">
-
-  <div class="hero-content">
+<section class="hero">
+  <div class="container hero-content">
     <h1>Consultation</h1>
     <p>Informations pratiques et tarifs</p>
 
-    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau" class="btn-doctolib"
-      target="_blank" rel="noopener noreferrer">
-      Rendez-vous sur Doctolib
-    </a>
-  </div>
+    <!-- ✅ bouton ajouté -->
+    <div class="hero-actions">
+      <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau" 
+        class="btn-doctolib btn-doctolib-hero"
+        target="_blank" 
+        rel="noopener noreferrer">
+        Rendez-vous sur Doctolib
+      </a>
+    </div>
 </section>
 
 <!-- CONSULTATION -->
@@ -127,7 +133,7 @@
   <div class="container section-grid">
 
     <div class="card">
-      <img src="../assets/images/materiel-chiropracteur.jpg" alt="Matériel">
+      <img src="../assets/images/materiel-chiropracteur.jpg" alt="Matériel">  
       <p>Matériel professionnel</p>
     </div>
 
@@ -143,9 +149,17 @@
 <section class="cta">
   <div class="container">
 
-    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau/booking/patient-identity?source=profile"
-      class="btn-doctolib" target="_blank" rel="noopener noreferrer">
-      Rendez-vous sur Doctolib
+    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau/booking?source=profile" target="_blank"
+      rel="noopener noreferrer" class="cta-btn cta-doctolib" aria-label="Prendre rendez-vous">
+    
+      <span class="cta-icon cta-icon--compact">
+        <img src="../assets/images/D_White.svg" alt="" class="cta-icon-img cta-icon-img--d">
+      </span>
+    
+      <span class="cta-icon-wordmark">
+        <img src="../assets/images/Doctolib_White.svg" alt="Doctolib" class="cta-icon-img cta-icon-img--wordmark">
+      </span>
+    
     </a>
   </div>
 </section>

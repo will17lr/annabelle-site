@@ -6,6 +6,10 @@
 
   <title>Qui suis-je - Annabelle Néraudeau Chiropracteur</title>
 
+  <!-- Config SEO -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Description SEO -->
   <meta name="description"
     content="Découvrez le parcours et l’approche d’Annabelle Néraudeau, chiropracteur à La Rochelle.">
 
@@ -32,17 +36,20 @@
   <div id="header"></div>
 
 <!-- HERO PREMIUM -->
-<section class="hero-about">
-  <div class="overlay">
+<section class="hero">
+  <div class="container hero-content">
     <h1>Qui suis-je</h1>
     <p>Une approche humaine et personnalisée du soin</p>
 
-    <br>
     <!-- ✅ bouton ajouté -->
-    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau" class="btn-doctolib" target="_blank"
-      rel="noopener noreferrer">
-      Rendez-vous sur Doctolib
-    </a>
+    <div class="hero-actions">
+      <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau" 
+        class="btn-doctolib btn-doctolib-hero"
+        target="_blank" 
+        rel="noopener noreferrer">
+        Rendez-vous sur Doctolib
+      </a>
+    </div>
   </div>
 </section>
 
@@ -59,7 +66,6 @@
       <p><strong>Chiropracteur / Chiropraticienne</strong></p>
 
       <p>Diplômée de l'Institut Franco Européen de Chiropratique (IFEC) à Paris.</p>
-
       <p>Titulaire d'un Diplôme Universitaire (D.U) de prise en charge préventive du sportif.</p>
 
       <p>
@@ -82,12 +88,12 @@
   <div class="container">
     <h3>Mon parcours</h3>
 
-    <ul>
-      <li>Diplômée de l’IFEC (Paris)</li>
-      <li>D.U prise en charge préventive du sportif</li>
-      <li>Expérience en cabinet dans toute la France</li>
-      <li>Formations continues et séminaires réguliers</li>
-    </ul>
+    <div class="parcours-grid">
+      <div class="card">Diplômée de l’IFEC (Paris)</div>
+      <div class="card">D.U prise en charge du sportif</div>
+      <div class="card">Expérience en cabinet</div>
+      <div class="card">Formations continues</div>
+    </div>
   </div>
 </section>
 
@@ -97,18 +103,52 @@
 
     <h3>Ma vision de la Chiropratique</h3>
 
-    <p>Vos organes et vos muscles sont reliés à des <strong>nerfs</strong> permettant de transmettre un message nerveux.</p>
+    <div class="valeurs-grid">
+    
+      <div class="card">
+        <p>Les <strong>nerfs</strong> relient organes et muscles au cerveau.</p>
+      </div>
+    
+      <div class="card">
+        <p>Un <strong>blocage</strong> perturbe le message nerveux.</p>
+      </div>
+    
+      <div class="card">
+        <p>Cela peut créer <strong>douleur ou dysfonctionnement</strong>.</p>
+      </div>
+    
+      <div class="card">
+        <p>Le chiropracteur libère ces <strong>blocages</strong>.</p>
+      </div>
+    
+      <div class="card">
+        <p>Chaque soin est <strong>adapté à la personne</strong>.</p>
+      </div>
+    
+      <div class="card">
+        <p>Approche <strong>globale : corps et émotions</strong>.</p>
+      </div>
+    
+    </div>
+  </div>
+</section>
 
-    <p>Un blocage perturbe ce message et entraîne <strong>douleur ou dysfonctionnement</strong>.</p>
+<section class="gallery">
+  <div class="container">
+    <div class="gallery-grid">
+      <img src="../assets/images/deco2.jpg" alt="Décoration intérieure dans le cabinet" title="Décoration intérieure dans le cabinet">
+      <img src="../assets/images/deco3.jpg" alt="Ambiance apaisante de la salle d'attente" title="Ambiance apaisante de la salle d'attente">
+      <img src="../assets/images/deco1.jpg" alt="Détails décoratifs du cabinet" title="Détails décoratifs du cabinet">
+    </div>
+  </div>
+</section>
 
-    <p>Le chiropracteur agit pour libérer ces blocages au niveau de la <strong>colonne vertébrale</strong>, des muscles ou des articulations.</p>
-
-    <p>Différentes techniques sont utilisées, adaptées à chaque patient.</p>
-
-    <p>Un travail musculaire peut compléter le soin : étirements, relâchement, trigger points.</p>
-
-    <p>Le corps et les émotions étant liés, une <strong>approche globale</strong> est également proposée.</p>
-
+<section class="about-conclusion">
+  <div class="container">
+    <p>
+      Chaque patient étant unique, mon approche s’adapte à vos besoins afin de vous accompagner durablement vers un
+      mieux-être.
+    </p>
   </div>
 </section>
 
@@ -116,9 +156,17 @@
 <section class="cta">
   <div class="container">
 
-    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau/booking/patient-identity?source=profile"
-      class="btn-doctolib" target="_blank" rel="noopener noreferrer">
-      Rendez-vous sur Doctolib
+    <a href="https://www.doctolib.fr/chiropracteur/la-rochelle/annabelle-neraudeau/booking?source=profile" target="_blank"
+      rel="noopener noreferrer" class="cta-btn cta-doctolib" aria-label="Prendre rendez-vous">
+    
+      <span class="cta-icon cta-icon--compact">
+        <img src="../assets/images/D_White.svg" alt="" class="cta-icon-img cta-icon-img--d">
+      </span>
+    
+      <span class="cta-icon-wordmark">
+        <img src="../assets/images/Doctolib_White.svg" alt="Doctolib" class="cta-icon-img cta-icon-img--wordmark">
+      </span>
+    
     </a>
   </div>
 </section>
