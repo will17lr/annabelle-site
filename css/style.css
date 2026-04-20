@@ -75,7 +75,7 @@ h3 {
 }
 
 section {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .card {
@@ -125,6 +125,15 @@ section {
 .logo span {
   font-weight: bold;
   color: var(--secondary);
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit; /* garde la couleur du texte parent */
+}
+
+.logo a:hover {
+  text-decoration: none;
 }
 
 .nav {
@@ -336,7 +345,7 @@ section {
    6. GALLERY
    ========================================================================== */
 .gallery {
-  margin: 60px auto;
+  margin: 05px auto;
 }
 
 .gallery-grid {
@@ -1124,6 +1133,36 @@ section {
   margin-top: 30px;
 }
 
+/* ========================================
+   GRID 2 COLONNES (texte + image)
+======================================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* IMAGE SECTION VALEURS */
+.valeurs .image {
+  display: flex;
+  justify-content: center;
+}
+
+.valeurs .image img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* MOBILE */
+@media (max-width: 930px) {
+  .valeurs .image img {
+    max-width: 260px;
+  }
+}
+
 /* ==========================================================================
    17. ANIMATION
    ========================================================================== */
@@ -1253,7 +1292,8 @@ section {
   .parcours-grid,
   .valeurs-grid,
   .section-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 
@@ -1370,12 +1410,6 @@ section {
   }
 }
 
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 480px) {
   .container {
     width: 94%;
@@ -1425,8 +1459,8 @@ section {
 }
 
 /* ==========================================================================
-   19. CONTACT
-   ========================================================================== */
+19. CONTACT
+========================================================================== */
 .contact {
   padding: 60px 0;
 }
@@ -1477,6 +1511,21 @@ section {
   height: 100%;
   min-height: 300px;
   border: none;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-card {
+    width: 100%;
+  }
+
+  .map-iframe {
+    width: 100%;
+    height: 250px;
+  }
 }
 
 /* ==========================================================================
