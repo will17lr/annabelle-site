@@ -1,3 +1,5 @@
+const basePath = "";
+
 function loadComponent(id, file, callback) {
   fetch(file)
     .then(res => {
@@ -5,18 +7,9 @@ function loadComponent(id, file, callback) {
       return res.text();
     })
     .then(data => {
-      document.getElementById(id).innerHTML = data;
+      const container = document.getElementById(id);
+      container.innerHTML = data;
 
-      // FIX PATH LINKS (si dans /pages/)
-      const links = document.querySelectorAll("nav a");
-      links.forEach(link => {
-        const href = link.getAttribute("href");
-        if (href && !href.startsWith("http")) {
-          link.setAttribute("href", basePath + href.replace("../",  ""));
-        }
-      });
-
-      // Exécute après injection
       if (callback && typeof callback === "function") {
         callback();
       }
@@ -24,9 +17,7 @@ function loadComponent(id, file, callback) {
     .catch(err => console.error(err));
 }
 
-const basePath = window.location.pathname.includes("/pages/") ? "../" : "";
-
-// ⚠️ IMPORTANT : on passe une fonction anonyme
+// Chargement composants
 loadComponent("header", basePath + "components/header.html", () => {
   initMenu();
 });
