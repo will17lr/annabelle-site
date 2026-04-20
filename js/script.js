@@ -83,7 +83,6 @@ function initFloatingCta() {
   const hero = document.querySelector(".hero");
 
   if (!ctaButtons.length || !ctaMobile) {
-    console.warn("CTA introuvable");
     return;
   }
 
@@ -220,8 +219,3 @@ function initFloatingCta() {
     }
   });
 }
-
-// sécurité : si le footer est déjà là au load
-window.addEventListener("load", () => {
-  initFloatingCta();
-});
