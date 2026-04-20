@@ -181,72 +181,58 @@ section {
    ========================================================================== */
 .hero {
   position: relative;
-  height: 45vh;
-  min-height: 320px;
-
   display: flex;
   align-items: center;
-
-  margin-top: -30px;
+  min-height: 60vh;
+  height: auto;
+  margin-top: 0;
+  padding: 50px 0;
   background:
     linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    /*page index.html */
-    /* url("../assets/images/hero-cabinet1.jpg") center/cover no-repeat; */
-    /*page index.html */
     url("../assets/images/hero-cabinet12.jpg") center/cover no-repeat;
-    /*page index.html */
-    /* url("../assets/images/consultation-chiropracteur.jpg") center/cover no-repeat; */
 }
 
 .hero::after {
   display: none;
-  /* content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.5) */
-  );
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 520px;
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 10px;
+  padding: 36px 28px;
+  border-radius: 16px;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
   font-size: 2.2rem;
+  line-height: 1.2;
   letter-spacing: 0.5px;
   color: var(--primary);
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  color: var(--primary);
+  margin-bottom: 0;
 }
 
 .hero-actions {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 15px;
-  width: 260px;
-  margin: 20px auto 0;
+  width: 100%;
+  max-width: 320px;
+  margin: 24px auto 0;
 }
 
 .hero-actions a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 48px;
-  padding: 0 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.25s ease;
 }
 
 .phone {
@@ -262,52 +248,75 @@ section {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.btn-phone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  background: var(--primary);
-  color: white;
-  font-weight: 600;
-
-  padding: 12px 20px;
-  border-radius: 10px;
-
-  text-decoration: none;
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-}
-
-.btn-phone:hover {
-  background: #16304d;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
+/* ==========================================================================
+   4B. BOUTONS CTA UNIFIÉS
+   ========================================================================== */
+.btn-phone,
 .btn-doctolib {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: var(--doctolib);
-  color: var(--white);
-  border-radius: 8px;
-  text-decoration: none;
+  min-height: 56px;
+  padding: 0 22px;
+  border-radius: 999px;
   font-weight: 600;
-  box-shadow: 0 6px 18px rgba(0, 168, 224, 0.25);
-  transition: all 0.25s ease;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.btn-phone {
+  background: linear-gradient(135deg, var(--primary), #0d66aa);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(16, 122, 202, 0.25);
+}
+
+.btn-phone:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(16, 122, 202, 0.35);
+}
+
+.btn-doctolib {
+  background: linear-gradient(135deg, var(--doctolib), var(--doctolib-hover));
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0, 168, 224, 0.25);
 }
 
 .btn-doctolib:hover {
-  background: var(--doctolib-hover);
   transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 168, 224, 0.35);
 }
 
 .btn-doctolib:active {
   transform: scale(0.98);
+}
+
+/* CTA hero */
+.btn-doctolib-hero {
+  width: 100%;
+}
+
+/* CTA de section : apparence du flottant déplié */
+.btn-doctolib-section {
+  min-width: 170px;
+}
+
+.btn-doctolib-section .cta-icon--compact {
+  display: none;
+}
+
+.btn-doctolib-section .cta-icon-wordmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-doctolib-section .cta-icon-img--wordmark {
+  height: 18px;
+  width: auto;
 }
 
 /* ==========================================================================
@@ -340,7 +349,7 @@ section {
 .gallery-grid img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 1 / 1; /* carré parfait */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 16px;
   display: block;
@@ -653,7 +662,7 @@ section {
   gap: 12px;
 }
 
-.cta-btn {
+.cta-mobile .cta-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -669,10 +678,11 @@ section {
   transition:
     width 0.35s ease,
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
 }
 
-.cta-btn:hover {
+.cta-mobile .cta-btn:hover {
   transform: translateY(-2px);
 }
 
@@ -702,23 +712,23 @@ section {
     margin-left 0.25s ease;
 }
 
-.cta-btn.expanded {
+.cta-mobile .cta-btn.expanded {
   width: 170px;
   justify-content: center;
 }
 
-.cta-btn.expanded .cta-label {
+.cta-mobile .cta-btn.expanded .cta-label {
   opacity: 1;
   max-width: 110px;
   margin-left: 10px;
 }
 
-.cta-phone {
+.cta-mobile .cta-phone {
   background: linear-gradient(135deg, var(--primary), #0d66aa);
   gap: 8px;
 }
 
-.cta-doctolib {
+.cta-mobile .cta-doctolib {
   background: linear-gradient(135deg, var(--doctolib), var(--doctolib-hover));
   justify-content: center;
   position: relative;
@@ -748,15 +758,15 @@ section {
   display: block;
 }
 
-.cta-doctolib.expanded .cta-icon--compact {
+.cta-mobile .cta-doctolib.expanded .cta-icon--compact {
   display: none;
 }
 
-.cta-doctolib.expanded .cta-icon-wordmark {
+.cta-mobile .cta-doctolib.expanded .cta-icon-wordmark {
   display: flex;
 }
 
-.cta-doctolib .cta-label {
+.cta-mobile .cta-doctolib .cta-label {
   display: none !important;
 }
 
@@ -940,7 +950,7 @@ section {
   min-height: 60vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("../assets/images/cabinet1.jpg") center/cover no-repeat; /* page quoi et page qui */
+    url("../assets/images/cabinet1.jpg") center/cover no-repeat;
 }
 
 .hero-about h1 {
@@ -1148,6 +1158,7 @@ section {
 @media (max-width: 930px) {
   body {
     padding-top: 95px;
+    padding-bottom: 95px;
   }
 
   .container {
@@ -1211,8 +1222,15 @@ section {
     border-bottom: none;
   }
 
+  .hero {
+    min-height: auto;
+    padding: 36px 0 44px;
+  }
+
   .hero-content {
-    padding: 30px 20px;
+    max-width: 100%;
+    padding: 28px 20px;
+    border-radius: 14px;
   }
 
   .hero-content h1 {
@@ -1220,10 +1238,12 @@ section {
   }
 
   .hero-actions {
-    align-items: stretch;
+    max-width: 320px;
   }
 
-  .hero-actions a {
+  .hero-actions a,
+  .btn-doctolib,
+  .btn-phone {
     width: 100%;
   }
 
@@ -1234,7 +1254,7 @@ section {
   .valeurs-grid,
   .section-grid,
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .testimonial-text {
@@ -1290,12 +1310,12 @@ section {
     text-align: center;
   }
 
-  .cta-btn {
+  .cta-mobile .cta-btn {
     width: 52px;
     height: 52px;
   }
 
-  .cta-btn.expanded {
+  .cta-mobile .cta-btn.expanded {
     width: 160px;
   }
 
@@ -1324,10 +1344,6 @@ section {
     flex-direction: column;
   }
 
-  /* .gallery {
-    padding: 20px 0;
-  } */
-
   .gallery-grid img {
     width: 100%;
     max-width: 400px;
@@ -1336,18 +1352,45 @@ section {
     border-radius: 16px;
   }
 
-  .btn-doctolib {
-    display: none !important;
+  .grid-2 {
+    grid-template-columns: 1fr;
   }
 
-  .hero .btn-doctolib-hero {
-    display: inline-flex !important;
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card-horizontal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
   .container {
     width: 94%;
+  }
+
+  .hero {
+    padding: 28px 0 40px;
+  }
+
+  .hero-content {
+    padding: 24px 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.65rem;
   }
 
   .google-rating-content {
@@ -1381,28 +1424,9 @@ section {
   }
 }
 
-/* ===== GRID GLOBAL ===== */
-
-/* Desktop */
-.services-grid,
-.gallery-grid,
-.testimonials-grid,
-.valeurs-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* Mobile */
-@media (max-width: 930px) {
-  .services-grid,
-  .gallery-grid,
-  .testimonials-grid,
-  .valeurs-grid,
-  .parcours-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* SECTION CONTACT */
+/* ==========================================================================
+   19. CONTACT
+   ========================================================================== */
 .contact {
   padding: 60px 0;
 }
@@ -1413,15 +1437,13 @@ section {
   gap: 30px;
 }
 
-/* CARTE INFOS */
 .contact-card {
   background: white;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* ITEM */
 .contact-item {
   display: flex;
   gap: 15px;
@@ -1434,7 +1456,6 @@ section {
   color: var(--secondary);
 }
 
-/* LIENS */
 .contact a {
   color: var(--primary);
   text-decoration: none;
@@ -1445,11 +1466,10 @@ section {
   text-decoration: underline;
 }
 
-/* CARTE GOOGLE */
 .map-card {
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .map-card iframe {
@@ -1459,13 +1479,9 @@ section {
   border: none;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ==========================================================================
+   20. UTILITAIRES CONTENU
+   ========================================================================== */
 .note {
   margin-top: 20px;
   padding: 15px;
@@ -1499,119 +1515,64 @@ section {
   color: var(--accent);
 }
 
-@media (max-width: 930px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* INTRO */
 .intro {
   text-align: center;
   margin-bottom: 30px;
 }
 
-/* GRID */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
-
-/* CARD DETAIL */
-.card-detail {
-  background: var(--white);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* IMAGE */
-.card-detail img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-/* TITRE */
-.card-detail h3 {
-  margin-bottom: 10px;
-}
-
-/* NOTE */
-.note {
-  font-size: 0.9rem;
-  margin-top: 10px;
-  padding: 10px;
-  background: rgba(0,0,0,0.05);
-  border-radius: 8px;
-}
-
-/* MOBILE */
-@media (max-width: 930px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ==========================================================================
+   21. CARDS / BLOCS
+   ========================================================================== */
 .cards {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-/* CARD HORIZONTALE */
+.card-detail {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-detail img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card-detail h3 {
+  margin-bottom: 10px;
+}
+
 .card-horizontal {
   display: flex;
   align-items: center;
   gap: 20px;
-
   background: var(--white);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* IMAGE */
 .card-img {
   flex: 0 0 140px;
 }
 
 .card-img img {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 12px;
 }
 
-/* TEXTE */
 .card-content {
   flex: 1;
 }
 
 .card-content h3 {
   margin-bottom: 10px;
-}
-
-/* NOTE */
-.note {
-  margin-top: 10px;
-  padding: 8px;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.05);
-  border-radius: 8px;
-}
-
-/* MOBILE */
-@media (max-width: 930px) {
-  .card-horizontal {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .card-img {
-    width: 100%;
-  }
 }
