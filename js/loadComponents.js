@@ -9,6 +9,9 @@ function loadComponent(id, file, callback) {
     .then(data => {
       const container = document.getElementById(id);
       container.innerHTML = data;
+      if (typeof applySiteConfig === "function") {
+        applySiteConfig(container);
+      }
 
       if (callback && typeof callback === "function") {
         callback();

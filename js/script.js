@@ -30,6 +30,8 @@ function initMenu() {
   function openMenu() {
     nav.classList.add("active");
     toggle.classList.add("active");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Fermer le menu");
     clearTimeout(menuTimeout);
 
     menuTimeout = setTimeout(() => {
@@ -40,6 +42,8 @@ function initMenu() {
   function closeMenu() {
     nav.classList.remove("active");
     toggle.classList.remove("active");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Ouvrir le menu");
     clearTimeout(menuTimeout);
   }
 
@@ -60,9 +64,17 @@ function initMenu() {
     clearTimeout(menuTimeout);
   };
 
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
   document.onclick = () => {
     closeMenu();
   };
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
 }
 
 // ==========================
