@@ -167,24 +167,10 @@ section {
   transform: scaleX(1);
 }
 
-.nav a:focus-visible,
-.logo a:focus-visible,
-.menu-toggle:focus-visible,
-.btn-phone:focus-visible,
-.btn-doctolib:focus-visible,
-.btn-google-reviews:focus-visible,
-.footer a:focus-visible,
-.contact a:focus-visible {
-  outline: 3px solid rgba(42, 127, 158, 0.45);
-  outline-offset: 4px;
-}
-
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
-  border: 0;
-  background: transparent;
 }
 
 .menu-toggle.active span:nth-child(1) {
@@ -212,10 +198,7 @@ section {
   padding: 50px 0;
   background:
     linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    image-set(
-      url("../assets/images/hero-cabinet2.webp") type("image/webp"),
-      url("../assets/images/hero-cabinet2.jpg") type("image/jpeg")
-    ) center/cover no-repeat;
+    url("../assets/images/hero-cabinet2.jpg") center/cover no-repeat;
 }
 
 .hero::after {
@@ -976,10 +959,7 @@ section {
   min-height: 60vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    image-set(
-      url("../assets/images/hero-cabinet2.webp") type("image/webp"),
-      url("../assets/images/hero-cabinet2.jpg") type("image/jpeg")
-    ) center/cover no-repeat;
+    url("../assets/images/cabinet1.jpg") center/cover no-repeat;
 }
 
 .hero-about h1 {
@@ -1037,62 +1017,6 @@ section {
   margin-top: 10px;
   font-size: 14px;
   color: #666;
-}
-
-.contact-summary {
-  padding: 60px 0;
-  background: #ffffff;
-}
-
-.contact-summary-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
-  gap: 30px;
-  align-items: stretch;
-}
-
-.contact-info-panel,
-.contact-hours {
-  background: var(--white);
-  border: 1px solid rgba(30, 58, 95, 0.08);
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.contact-info-panel h2 {
-  margin-bottom: 22px;
-}
-
-.contact-list {
-  display: grid;
-  gap: 16px;
-}
-
-.contact-list .contact-item {
-  margin-bottom: 0;
-}
-
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.contact-actions .btn-phone,
-.contact-actions .btn-doctolib {
-  min-width: 180px;
-}
-
-.contact-hours {
-  max-width: none;
-  margin: 0;
-}
-
-.contact-hours .note {
-  margin-bottom: 0;
-  font-size: 0.92rem;
 }
 
 /* ==========================================================================
@@ -1483,14 +1407,6 @@ section {
 
   .card-img {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .card-img img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
   }
 }
 
@@ -1597,22 +1513,9 @@ section {
   border: none;
 }
 
-.map-card-wide iframe {
-  min-height: 380px;
-}
-
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
-  }
-
-  .contact-summary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-actions .btn-phone,
-  .contact-actions .btn-doctolib {
-    width: 100%;
   }
 
   .map-card {
@@ -1721,22 +1624,4 @@ section {
 
 .card-content h3 {
   margin-bottom: 10px;
-}
-
-.legal {
-  padding: 60px 0;
-  background: #ffffff;
-}
-
-.legal-content {
-  max-width: 850px;
-}
-
-.legal-content section {
-  padding: 0 0 28px;
-}
-
-.legal-content a {
-  color: var(--primary);
-  font-weight: 600;
 }
